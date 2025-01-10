@@ -61,9 +61,11 @@ export default function Home() {
         <section className="h-screen w-full snap-start bg-gradient-to-b from-[#ffffff] to-[#e2eefa] ">
           <FeaturesGrid />
         </section>
-        <div className="h-screen snap-start bg-gradient-to-b from-[#e2eefa] to-[hsl(0,0%,100%)] rounded-lg relative">
 
-          <div className="bg-light h-96 flex items-center justify-center gap-10 ">
+
+        <div className="h-screen snap-center bg-gradient-to-b from-[#e2eefa] to-[hsl(0,0%,100%)] rounded-lg relative">
+
+          <div className="bg-light h-96 flex items-center justify-center gap-10 pt-[200px]">
             <h2 className="text-dark font-semibold text-4xl">Get started in <span className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-medium to-dark ">three</span> steps:</h2>
             <div className="mt-16 flex flex-col items-center justify-center gap-12 relative">
               {/* Step 1 */}
