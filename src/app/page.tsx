@@ -5,6 +5,7 @@ import FeaturesGrid from "@/components/home/feature-card";
 import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
+import { LogIn, Settings, UserRoundPlus, UsersRound } from "lucide-react";
 
 export default function Home() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -60,6 +61,50 @@ export default function Home() {
         <section className="h-screen w-full snap-start bg-gradient-to-b from-[#ffffff] to-[#e2eefa] ">
           <FeaturesGrid />
         </section>
+        <div className="h-screen snap-start bg-gradient-to-b from-[#e2eefa] to-[hsl(0,0%,100%)] rounded-lg relative">
+
+          <div className="bg-light h-96 flex items-center justify-center gap-10 ">
+            <h2 className="text-dark font-semibold text-4xl">Get started in <span className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-medium to-dark ">three</span> steps:</h2>
+            <div className="mt-16 flex flex-col items-center justify-center gap-12 relative">
+              {/* Step 1 */}
+              <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+
+                <div>
+                  <span className="flex items-center font-semibold text-dark gap-3"> <UserRoundPlus size={30} className="text-dark"/> Sign up </span>
+                  <p className="text-sm text-medium">Create your account in seconds and start your journey with HelpHaven.</p>
+                </div>
+
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+                <div>
+                  <span className="flex items-center font-semibold text-dark gap-3"> <Settings size={30} className="text-dark"/> Set up your workspace </span>
+                  <p className="text-sm text-medium">Customize your environment to fit your team’s needs.</p>
+                </div>
+              </div>
+
+
+              {/* Step 3 */}
+              <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+                <div>
+                  <span className="flex items-center font-semibold text-dark gap-3"> <UsersRound size={30} className="text-dark"/> Start collaborating </span>
+                  <p className="text-sm text-medium">Invite your team, manage tasks, and offer stellar support right away!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="/stacked-waves-haikei.svg" alt="Decorative Section" className="w-full h-auto" />
+          </div>
+
+          <footer className="bg-[#427AA1] py-16 text-light text-center h-[400px]">
+            <h2 className="font-bold text-2xl">Footer Section</h2>
+            <p className="mt-4 text-sm">This is the footer content that blends with the SVG.</p>
+          </footer>
+        </div>
+
       </div>
     </div>
   );
