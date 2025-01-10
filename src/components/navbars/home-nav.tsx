@@ -11,12 +11,12 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
   return (
     <section className="flex justify-center">
       <nav
-        className={`fixed top-5 rounded-lg transition-all duration-1000 h-fit z-50 flex justify-between items-center
-      ${hasScrolled ? "bg-medium w-[40%] p-2 mx-auto" : "w-[95%] p-2"}
+        className={`fixed top-5 rounded-lg transition-all duration-1000 h-fit z-50 flex justify-between items-center w-[95%] p-2
+      ${hasScrolled ? "bg-medium lg:w-[40%] p-2 lg:mx-auto sm:w-[95%]" : "w-[95%] p-2"}
       `}
       >
         {/* Left side of the navbar */}
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-3 items-center">
           <Link
             href={`/`}
             className={`
@@ -37,7 +37,7 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
           <Link
             className={`${hasScrolled ? "text-light" : "text-dark"
               } font-bold text-sm`}
-            href={`/`}
+            href={`https://github.com/alejandro0619/help-haven`}
           >
             Github
           </Link>
