@@ -2,7 +2,7 @@
 
 import HomeNav from "@/components/navbars/home-nav";
 import FeaturesGrid from "@/components/home/feature-card";
-
+import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -34,12 +34,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen w-screen p-5 flex flex-col" >
+    <div className="h-screen w-screen p-2 flex flex-col" >
       {/* Navbar */}
       <HomeNav hasScrolled={hasScrolled} />
 
       {/* Snap Scrolling container */}
-      <div className="flex-grow overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth scrollbar-thin " ref={scrollContainerRef} >
+      <div className="flex-grow overflow-y-auto overflow-x-hidden snap-y snap-proximity scroll-smooth scrollbar-thin " ref={scrollContainerRef} >
 
         {/* Hero and CTA */}
         <section className="h-screen w-full snap-start flex justify-center items-center bg-gradient-to-b from-[#e2eefa] to-[hsl(0,0%,100%)] rounded-lg relative">
@@ -50,6 +50,9 @@ export default function Home() {
             <p className="text-xl sm:text-2xl md:text-xl font-bold text-center leading-relaxed bg-clip-text text-dark">
               Empower your support team with an unmatched solution.
             </p>
+            <button className="bg-dark text-light p-4 rounded-lg hover:bg-dark/50 transition-colors duration-300 font-bold ">
+              Get Started
+            </button>
           </div>
         </section>
 
