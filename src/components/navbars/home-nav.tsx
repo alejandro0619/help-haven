@@ -11,7 +11,7 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
   return (
     <section className="flex justify-center">
       <nav
-        className={`fixed top-5 rounded-lg transition-all duration-1000 h-fit z-50 flex justify-between items-center w-[95%] p-2
+        className={`fixed top-5 rounded-lg transition-all duration-1000 h-´40px] z-50 flex justify-between items-center w-[95%] p-2
       ${hasScrolled ? "bg-medium lg:w-[40%] p-2 lg:mx-auto sm:w-[95%]" : "w-[95%] p-2"}
       `}
       >

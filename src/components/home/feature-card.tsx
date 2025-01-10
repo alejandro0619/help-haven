@@ -1,95 +1,71 @@
 import { Card } from "@/components/ui/card";
-import { Smile, Github, Cloud, Key, TrendingUp } from 'lucide-react';
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Smile, Github, Cloud, Key, TrendingUp, ChevronsUp } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const BentoGrid = () => {
   return (
-    <section className="px-4 py-16 flex items-center h-auto w-full snap-start bg-gradient-to-b from-[#ffffff] to-[#e2eefa]">
+    <section className="pt-4 flex items-center h-screen w-full snap-start bg-gradient-to-b from-[#e2eefa] to-[#ffffff] overflow-y-auto">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-medium mb-12">
+        <h2 className="text-5xl font-bold text-center text-medium mb-2 lg:mb-14">
           Our Amazing Features
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
 
-          {/* Large feature card */}
+          {/* Cards for small screens (Mobile Layout) */}
           <div className="col-span-1">
-            <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-              <div className="flex items-center gap-4 mb-4">
-                <Smile className="text-dark" />
-                <h3 className="text-xl font-bold text-dark">Visually stunning</h3>
-              </div>
-              <p className="text-sm font-semibold text-dark">
-                UI designed to be a pleasure to use, with a focus on simplicity and ease of use.
-              </p>
+            <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col items-center sm:items-start">
+              <span className="w-full flex justify-center"> <Smile className="text-dark w-10 h-10 mb-4" /></span>
+              <h3 className="text-lg font-bold text-dark mb-2 text-center w-full"> UI / UX made with 💓</h3>
             </Card>
           </div>
 
-          {/* Small feature card */}
-          <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <div className="flex items-center gap-4 mb-4">
-              <Cloud className="text-dark w-6 h-6" />
-              <h3 className="text-xl font-bold text-dark">Cloud based</h3>
-            </div>
-            <p className="text-sm font-semibold text-dark">
-              Access your data from anywhere and on any device, thanks to our cloud infrastructure
-            </p>
-          </Card>
+          <div className="col-span-1">
+            <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col items-center sm:items-start">
+              <span className="w-full flex justify-center"> <Cloud className="text-dark w-10 h-10 mb-4" /> </span>
+              <h3 className="text-lg font-bold text-dark mb-2 text-center w-full">Cloud based infrastructure</h3>
+            </Card>
+          </div>
 
-          {/* Tall feature card */}
-          <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <div className="flex items-center gap-4 mb-4">
-              <Key className="text-dark w-6 h-6" />
-              <h3 className="text-xl font-bold text-dark">Super secure</h3>
-            </div>
-            <p className="text-sm font-semibold text-dark">
-              Easily manage user authentication with flexible integration options tailored to your needs.
-            </p>
-          </Card>
+          <div className="col-span-1">
+            <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col items-center sm:items-start">
+              <span className="w-full flex justify-center"><Key className="text-dark w-10 h-10 mb-4" /></span>
+              <h3 className="text-lg font-bold text-dark mb-2 text-center w-full">Super secure & private</h3>
+            </Card>
+          </div>
 
-          {/* Medium feature card */}
-          <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <div className="flex items-center gap-4 mb-4">
-              <TrendingUp className="text-dark w-6 h-6" />
-              <h3 className="text-xl font-bold text-dark">We grow with you</h3>
-            </div>
-            <p className="text-sm font-semibold text-dark">
-              Scale efficiently as your needs increase.
-            </p>
-          </Card>
+          <div className="col-span-1">
+            <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col items-center sm:items-start">
+              <span className="w-full flex justify-center"> <TrendingUp className="text-dark w-10 h-10 mb-4" /> </span>
+              <h3 className="text-lg font-bold text-dark mb-2 text-center w-full ">We grow with you</h3>
+            </Card>
+          </div>
 
-          {/* Small feature card */}
-          <Card className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <div className="flex items-center gap-4 mb-4">
-              <Github className="text-dark w-6 h-6" />
-              <h3 className="text-xl font-bold text-dark">Empowered by devs</h3>
-            </div>
-            <p className="text-sm font-semibold text-dark">
-              Join a growing community, contribute, and adapt the solution to your needs with our open-source approach
-            </p>
-          </Card>
-
-          {/* Large feature card */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-3">
-            <div className="bg-light p-6 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col gap-4  h-full sm:flex-row sm:items-start">
-              <span className="flex flex-col text-center sm:text-left lg:justify-center lg:h-full">
-                <h3 className="text-3xl font-bold text-dark">Ready to boost your productivity?</h3>
-                <p className="text-sm font-semibold text-dark">
+          {/* Large feature card for input (Full width on mobile) */}
+          <div className="sm:col-span-2 lg:col-span-4 col-span-2">
+            <div className="bg-light p-5 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-around lg:h-[150px]">
+              <div className="flex-col text-center sm:text-left ">
+                <h3 className="text-lg lg:text-3xl font-bold text-dark mb-2 flex w-full justify-center items-center gap-2">Ready to <ChevronsUp /> your productivity?</h3>
+                <p className="text-sm font-semibold text-dark hidden lg:block">
                   Get started with HelpHaven today and see the difference for yourself.
                 </p>
-              </span>
-              <div className="flex flex-col gap-2 w-full sm:w-auto sm:flex-row sm:items-center lg:h-full ">
-                <Input type="email" placeholder="Join the waitlist" className="w-full sm:w-[300px] border-medium font-semibold text-dark" />
+              </div>
+              <div className="flex flex-col gap-2 w-full sm:w-auto sm:flex-row sm:items-center">
+                <Input
+                  type="email"
+                  placeholder="Join the waitlist"
+                  className="w-full sm:w-[300px] border-medium font-semibold text-dark"
+                />
                 <Button type="submit" className="bg-medium w-full sm:w-auto">
                   Subscribe
                 </Button>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-
   );
 };
 

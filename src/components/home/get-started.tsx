@@ -11,10 +11,10 @@ const GetStarted = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Contenido principal */}
-      <div className="h-full flex flex-col lg:flex-row items-center justify-center gap-10">
-        {/* Texto */}
-        <h2 className="text-dark font-semibold text-4xl text-center lg:text-left">
+
+      <div className="h-full flex flex-col lg:flex-row items-center justify-center gap-5">
+
+        <h2 className="text-dark font-semibold text-4xl text-center lg:text-left ">
           Get started into the{" "}
           <span className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-medium to-dark">
             FLOW
@@ -22,42 +22,42 @@ const GetStarted = () => {
           in 3 steps:
         </h2>
 
-        {/* Contenedor de las Cards */}
+
         <div className="flex flex-col items-center justify-center gap-12 mt-8 lg:mt-0">
           {/* Step 1 */}
-          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-fit lg:w-[300px]">
             <div>
               <span className="flex items-center font-semibold text-dark gap-3 border-solid border-2 border-light bg-medium rounded-2xl w-fit p-2">
                 <UserRoundPlus size={30} className="text-light" />
               </span>
-              <p className="font-semibold text-medium text-xl">Sign up</p>
-              <p className="text-md text-medium">
-                Create your account in seconds and start your journey with us.
+              <p className="font-semibold text-medium text-xl">Create your account</p>
+              <p className="text-md text-medium hidden lg:block">
+                Start your journey right away!
               </p>
             </div>
           </div>
 
           {/* Step 2 */}
-          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-fit lg:w-[300px]">
             <div>
               <span className="flex items-center font-semibold w-fit p-2 bg-medium rounded-2xl text-dark gap-3 border-solid border-light border-2">
                 <Settings size={30} className="text-light" />
               </span>
               <p className="font-semibold text-medium text-xl">Set up your workspace</p>
-              <p className="text-md text-medium">
+              <p className="text-md text-medium hidden lg:block">
                 Customize your environment to fit your team’s needs.
               </p>
             </div>
           </div>
 
           {/* Step 3 */}
-          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-[300px]">
+          <div className="flex items-center gap-6 bg-[#e2eefa] p-6 rounded-lg shadow-lg w-fit lg:w-[300px]">
             <div>
               <span className="flex items-center font-semibold gap-3 w-fit p-2 bg-medium rounded-2xl text-dark border-solid border-light border-2">
                 <UsersRound size={30} className="text-light" />
               </span>
               <p className="font-semibold text-medium text-xl">Start Collaborating</p>
-              <p className="text-md text-medium">
+              <p className="text-md text-medium hidden lg:block">
                 Invite your team, manage tasks, and offer stellar support right away!
               </p>
             </div>
