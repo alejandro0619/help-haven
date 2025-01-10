@@ -9,7 +9,9 @@ export default {
   ],
   theme: {
   	extend: {
-  		colors: {
+			colors: {
+				scrollbarThumb: '#888',
+        scrollbarTrack: '#f1f1f1',
   			light: '#e2eefa',
   			medium: '#427AA1',
   			dark: '#064789',

@@ -12,21 +12,21 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Comprobamos el scroll en el contenedor
+
       if (scrollContainerRef.current) {
         const isScrolled = scrollContainerRef.current.scrollTop > 50;
         setHasScrolled(isScrolled);
       }
     };
 
-    // Añadimos el listener de scroll al contenedor
+
     const container = scrollContainerRef.current;
     if (container) {
       container.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      // Limpiamos el listener cuando el componente se desmonte
+
       if (container) {
         container.removeEventListener("scroll", handleScroll);
       }
@@ -38,8 +38,8 @@ export default function Home() {
       {/* Navbar */}
       <HomeNav hasScrolled={hasScrolled} />
 
-      {/* Contenedor con snap scrolling */}
-      <div className="flex-grow overflow-auto snap-y snap-mandatory scroll-smooth" ref={scrollContainerRef} >
+      {/* Snap Scrolling container */}
+      <div className="flex-grow overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth scrollbar-thin " ref={scrollContainerRef} >
 
         {/* Hero and CTA */}
         <section className="h-screen w-full snap-start flex justify-center items-center bg-gradient-to-b from-[#e2eefa] to-[hsl(0,0%,100%)] rounded-lg relative">
