@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Smile, Github, Cloud, Key, TrendingUp, ChevronsUp } from "lucide-react";
+import { Smile,  Cloud, Key, TrendingUp, ChevronsUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 

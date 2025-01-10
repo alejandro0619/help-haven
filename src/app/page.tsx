@@ -8,7 +8,6 @@ import Princing from "@/components/home/Pricing";
 import Footer from "@/components/footers/Footer";
 
 import { useEffect, useRef, useState } from "react";
-import { Separator } from "@radix-ui/react-separator";
 
 export default function Home() {
   const [hasScrolled, setHasScrolled] = useState(false);
