@@ -52,14 +52,16 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
 
         {/* Right side of the navbar */}
         <div className="flex items-center">
-          <Button
-            className={`
-          ${hasScrolled ? "bg-light text-dark hover:bg-light/50" : "bg-dark text-light hover:bg-dark/50"}
-          px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm
-        `}
-          >
-            Join Waitlist
-          </Button>
+          <Link href={"#features-waitlist"}>
+            <Button
+              className={`
+            ${hasScrolled ? "bg-light text-dark hover:bg-light/50" : "bg-dark text-light hover:bg-dark/50"}
+            px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm
+          `}
+            >
+              Join Waitlist
+            </Button>
+          </Link>
         </div>
       </nav>
     </section>

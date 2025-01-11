@@ -2,10 +2,42 @@ import { Card } from "@/components/ui/card";
 import { Smile,  Cloud, Key, TrendingUp, ChevronsUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+
+import {
+  useState, useTransition
+} from "react";
+import handler_add_to_waitlist from "@/actions/waitlist/add-to-waitlist";
 
 const BentoGrid = () => {
+  const [isPending, startTransition] = useTransition();
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const { toast } = useToast();
+
+  const handleSubmit = async (formData: FormData) => {
+    const email = formData.get("email") as string;
+    console.log(email);
+    startTransition(async () => {
+      const result = await handler_add_to_waitlist(email);
+      if (result.success) {
+        setStatus("success");
+        toast({
+          title: "Success!",
+          description: "You have been added to the waitlist.",
+          variant: "default",
+        });
+      }
+      else {
+        setStatus("error");
+        toast({
+          title: "Error!",
+          description: "An error occurred while adding you to the waitlist.",
+          variant: "destructive",
+        });
+      }})
+  }
   return (
-    <section className="pt-4 flex items-center h-screen w-full snap-start bg-gradient-to-b from-[#e2eefa] to-[#ffffff] overflow-y-auto">
+    <section id = "features-waitlist" className="pt-4 flex items-center h-screen w-full snap-start bg-gradient-to-b from-[#e2eefa] to-[#ffffff] overflow-y-auto">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl font-bold text-center text-medium mb-2 lg:mb-14">
           Our Amazing Features
@@ -50,15 +82,20 @@ const BentoGrid = () => {
                   Get started with HelpHaven today and see the difference for yourself.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 w-full sm:w-auto sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-2 w-full lg:w-auto">
+                <form action={handleSubmit} className="flex flex-col lg:flex-row  gap-2 w-full sm:w-auto">
                 <Input
-                  type="email"
+                    type="email"
+                    name="email"
                   placeholder="Join the waitlist"
                   className="w-full sm:w-[300px] border-medium font-semibold text-dark"
                 />
-                <Button type="submit" className="bg-medium w-full sm:w-auto">
-                  Subscribe
-                </Button>
+                  <Button type="submit" disabled={isPending} className={`w-full sm:w-auto ${isPending ? "bg-dark text-light" : "bg-medium text-light hover:bg-dark hover:text-light"}`}>
+                    {isPending ? 'Submitting...' : 'Join the waitlist'}
+                  </Button>
+
+                </form>
+
               </div>
             </div>
           </div>
