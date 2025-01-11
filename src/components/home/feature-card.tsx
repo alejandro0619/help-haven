@@ -11,7 +11,7 @@ import handler_add_to_waitlist from "@/actions/waitlist/add-to-waitlist";
 
 const BentoGrid = () => {
   const [isPending, startTransition] = useTransition();
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [, setStatus] = useState<"idle" | "success" | "error">("idle");
   const { toast } = useToast();
 
   const handleSubmit = async (formData: FormData) => {

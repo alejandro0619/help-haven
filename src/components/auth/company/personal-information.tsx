@@ -7,7 +7,7 @@ type props = {
   nextStep: () => void;
   prevStep: () => void;
 }
-const PersonalInformation: React.FC<props> = ({ nextStep, prevStep }) => {
+const PersonalInformation: React.FC<props> = () => {
   return (
     <div className="flex flex-col gap-4 rounded-lg p-6 lg:h-[600px] lg:w-fit w-fulll">
       <span>

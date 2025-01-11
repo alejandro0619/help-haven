@@ -2,7 +2,6 @@
 
 import ChooseProvider from "@/components/auth/company/choose-provider";
 import PersonalInformation from "@/components/auth/company/personal-information";
-import StepsNavigation from "@/components/forms/steps-navigation";
 import { useSteps } from "@/hooks/use-steps";
 
 
@@ -31,7 +30,7 @@ const AuthPage = () => {
     }
   ]
 
-  const { currentStep, currentStepData, nextStep, prevStep, resetSteps, totalSteps } = useSteps(SignUpSteps);
+  const { currentStep, nextStep, prevStep, } = useSteps(SignUpSteps);
   const mapStepsIntoComponents = () => {
     switch (currentStep) {
       case 0:
