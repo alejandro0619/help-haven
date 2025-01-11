@@ -42,7 +42,7 @@ export default function Home() {
       <HomeNav hasScrolled={hasScrolled} />
 
       {/* Snap Scrolling container */}
-      <div className="flex-grow overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth scrollbar-thin " ref={scrollContainerRef} >
+      <div className="flex-grow overflow-y-auto lg:overflow-x-hidden lg:snap-y lg:snap-mandatory scroll-smooth scrollbar-thin " ref={scrollContainerRef} >
 
         {/* Hero and CTA */}
         <Landing />
