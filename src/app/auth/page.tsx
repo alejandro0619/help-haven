@@ -1,6 +1,7 @@
 'use client';
 
 import ChooseProvider from "@/components/auth/company/choose-provider";
+import PersonalInformation from "@/components/auth/company/personal-information";
 import StepsNavigation from "@/components/forms/steps-navigation";
 import { useSteps } from "@/hooks/use-steps";
 
@@ -35,8 +36,8 @@ const AuthPage = () => {
     switch (currentStep) {
       case 0:
         return <ChooseProvider nextStep={nextStep} />;
-      // case 1:
-      //   return <PersonalInformation nextStep={nextStep} />;
+      case 1:
+        return <PersonalInformation nextStep={nextStep} prevStep={prevStep}/>;
       // case 2:
       //   return <CreateOrganization nextStep={nextStep} />;
       // case 3:
