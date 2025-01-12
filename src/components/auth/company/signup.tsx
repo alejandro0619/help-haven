@@ -3,6 +3,7 @@ import PersonalInformation from "@/components/auth/company/personal-information"
 import CreateOrganization from "@/components/auth/company/create-join-organization";
 
 import { useSteps } from "@/hooks/use-steps";
+import SetUpIntegrations from "./set-up-integrations";
 
 
 const SignUpPage = () => {
@@ -39,8 +40,8 @@ const SignUpPage = () => {
         return <PersonalInformation nextStep={nextStep} prevStep={prevStep}/>;
       case 2:
         return <CreateOrganization nextStep={nextStep} />;
-      // case 3:
-      //   return <SetIntegrations nextStep={nextStep} />;
+      case 3:
+        return <SetUpIntegrations nextStep={nextStep} />;
       // case 4:
       //   return <ReviewSettings nextStep={nextStep} />;
       default:

@@ -1,6 +1,8 @@
+type props = {
+  nextStep: () => void;
+}
 
-
-const SetUpIntegrations = () => {
+const SetUpIntegrations: React.FC<props> = ({}) => {
 
 
   return (
