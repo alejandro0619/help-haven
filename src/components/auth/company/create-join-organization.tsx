@@ -11,6 +11,7 @@ import { StepForward } from 'lucide-react';
 import { saveOrganization } from '@/actions/auth/save-organization';
 import { assignOrgToProfile } from '@/actions/auth/asign-org-to-profile';
 import useAuth from '@/hooks/use-auth';
+import Link from 'next/link';
 
 type props = {
   nextStep: () => void;
@@ -92,7 +93,7 @@ const CreateOrganization: React.FC<props> = ({ nextStep }) => {
 
               </SelectContent>
               <span className='font-regular text-gray-500 text-sm mt-2'>
-                Check here for more details on our <a href="/" className='text-blue-500'>pricing plans</a>
+                Check here for more details on our <Link href="/" className='text-blue-500'>pricing plans</Link>
               </span>
             </Select>
           </div>
@@ -167,7 +168,7 @@ const CreateOrganization: React.FC<props> = ({ nextStep }) => {
           </div>
 
           <div className="col-span-1 lg:col-span-2">
-            Join an existing organization? <a href="/" className="text-blue-500">Click here</a>
+            Join an existing organization? <Link href="/" className="text-blue-500">Click here</Link>
             <Button
               type="submit"
               className="bg-medium text-white hover:bg-medium/80 w-full px-4 py-2 mt-4 sm:mt-6 text-sm"
