@@ -1,7 +1,9 @@
-import { createClient } from "@/utils/supabase/client";
+'use server';
+
+import { createClient } from "@/utils/supabase/server";
 
 export const addProviderEmail = async (email: string, password: string) => {
-  const client = createClient();
+  const client = await createClient();
   const { data, error } = await client.auth.signUp(
     {
       email,

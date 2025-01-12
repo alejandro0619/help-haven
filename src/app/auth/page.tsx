@@ -50,7 +50,7 @@ const AuthPage = () => {
   return (
     <main className="grid grid-cols-1 lg:grid-cols-4 gap-2 h-screen w-screen p-2">
       {/* Sidebar */}
-      <section className="bg-red-400 col-span-1 lg:col-span-1 flex flex-col h-full relative rounded-lg" style={{
+      <section className="col-span-1 lg:col-span-1 flex flex-col h-full relative rounded-lg" style={{
         backgroundImage: `url('/stacked-waves-haikei.svg')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
