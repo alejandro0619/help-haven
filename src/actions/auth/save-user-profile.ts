@@ -21,7 +21,7 @@ export const saveUserProfile = async (user: Profile) => {
       state: user.state,
       user_id: user.id,
     });
-
+    console.log("check data", data, error);
 
   if (error) {
     throw error;
