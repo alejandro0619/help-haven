@@ -32,10 +32,5 @@ export const personalInformation = z.object({
 
 });
 
-// Usage example:
-// const result = formSchema.safeParse(formData);
-// if (!result.success) {
-//   console.error(result.error.format());
-// }
 
 export type PersonalInformationSchema = z.infer<typeof personalInformation>;

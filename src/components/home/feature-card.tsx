@@ -16,7 +16,6 @@ const BentoGrid = () => {
 
   const handleSubmit = async (formData: FormData) => {
     const email = formData.get("email") as string;
-    console.log(email);
     startTransition(async () => {
       const result = await handler_add_to_waitlist(email);
       if (result.success) {

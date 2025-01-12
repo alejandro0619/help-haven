@@ -7,7 +7,7 @@ import { PersonalInformationSchema } from "@/schemas/auth/personal-information-s
 type Profile = PersonalInformationSchema & { id: string };
   
 export const saveUserProfile = async (user: Profile) => {
-  console.log(user);
+
   const supabase = await createClient();
   const { data, error } = await supabase
     .from('profiles')
@@ -22,7 +22,7 @@ export const saveUserProfile = async (user: Profile) => {
       user_id: user.id,
     });
 
-  console.log(data, error);
+
   if (error) {
     throw error;
   }
