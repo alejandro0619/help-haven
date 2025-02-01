@@ -28,7 +28,7 @@ export const personalInformation = z.object({
   postal_code: z
     .string()
     .nonempty("Postal Code is required")
-    .regex(/^\d{5}$/, "Postal Code must be a 5-digit number"),
+    .regex(/^\d{4}$/, "Postal Code must be a 4-digit number"),
 
 });
 

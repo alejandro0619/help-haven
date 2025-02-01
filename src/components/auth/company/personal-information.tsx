@@ -24,14 +24,14 @@ const PersonalInformation: React.FC<props> = ({ nextStep }) => {
     nextStep();
   }
   return (
-    <div className="flex flex-col gap-4 rounded-lg p-6 lg:h-[600px] lg:w-fit w-fulll">
+    <div className="flex flex-col gap-4 rounded-lg p-6 lg:h-[600px] lg:w-fit w-full">
       <span>
         <h1 className="font-bold text-dark text-2xl text-center">Personal information</h1>
         <p className="text-regular text-center font-md">Fill in your personal information to set up your account</p>
       </span>
 
       <div className="flex flex-col gap-6">
-        <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:w-full" onSubmit={handleSubmit(onSubmit)}>
+        <form className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-full" onSubmit={handleSubmit(onSubmit)}>
           {/* Name */}
           <div className="flex flex-col gap-2">
             <Label htmlFor="first_name" className="text-dark font-semibold">

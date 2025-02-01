@@ -1,9 +1,10 @@
 import ChooseProvider from "@/components/auth/company/choose-provider";
 import PersonalInformation from "@/components/auth/company/personal-information";
 import CreateOrganization from "@/components/auth/company/create-join-organization";
+import ReviewSettings from "@/components/auth/company/review-settings";
 
 import { useSteps } from "@/hooks/use-steps";
-import SetUpIntegrations from "./set-up-integrations";
+
 
 
 const SignUpPage = () => {
@@ -22,10 +23,6 @@ const SignUpPage = () => {
       description: "Create your organization and set up your workspace.",
     },
     {
-      title: "Set up your integrations",
-      description: "Connect your favorite tools to FlowTicket.",
-    },
-    {
       title: "Review your settings",
       description: "Review your settings and start using FlowTicket.",
     }
@@ -37,21 +34,19 @@ const SignUpPage = () => {
       case 0:
         return <ChooseProvider nextStep={nextStep} />;
       case 1:
-        return <PersonalInformation nextStep={nextStep} prevStep={prevStep}/>;
+        return <PersonalInformation nextStep={nextStep} prevStep={prevStep} />;
       case 2:
-        return <CreateOrganization nextStep={nextStep} />;
+        return <CreateOrganization nextStep={nextStep} />
       case 3:
-        return <SetUpIntegrations nextStep={nextStep} />;
-      // case 4:
-      //   return <ReviewSettings nextStep={nextStep} />;
+        return <ReviewSettings nextStep={nextStep} />;
       default:
         return <ChooseProvider nextStep={nextStep} />;
     }
   }
   return (
-    <main className="grid grid-cols-1 lg:grid-cols-4 gap-2 h-screen w-screen p-2">
+    <main className="grid grid-cols-1 lg:grid-cols-4 gap-2 h-screen w-full p-2 over">
       {/* Sidebar */}
-      <section className="col-span-1 lg:col-span-1 flex flex-col h-full relative rounded-lg" style={{
+      <section className="col-span-1 lg:col-span-1 flex flex-col  justify-between relative rounded-lg" style={{
         backgroundImage: `url('/stacked-waves-haikei.svg')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -60,12 +55,12 @@ const SignUpPage = () => {
 
         <div className="absolute inset-0 bg-black opacity-50 z-5 rounded-lg"></div>
 
-        <div className="z-10 p-5 lg:mt-[2rem]">
+        <div className="z-10 px-5 lg:mt-[3rem] h-fit">
           <h1 className="font-bold text-xl text-left  text-light ">Welcome to FlowTicket</h1>
           <p className="font-regular text-left text-muted ">Follow these steps to get started with us</p>
         </div>
 
-        <section className="px-5 flex flex-col gap-6">
+        <section className="px-5 flex flex-col gap-6 h-full z-10">
           {SignUpSteps.map((step, index) => (
             <div key={index} className="relative flex items-center p-2 rounded-lg">
               {/* Step Icon */}
@@ -84,6 +79,9 @@ const SignUpPage = () => {
             </div>
           ))}
         </section>
+        <p className="text-left z-10 text-light font-semibold p-5">
+          Need help? <a href="#" className="text-blue-500">Contact support</a>
+        </p>
       </section>
 
       {/* Main Content */}
@@ -92,7 +90,6 @@ const SignUpPage = () => {
         <div className="h-full flex flex-col items-center justify-center gap-5">
 
           {mapStepsIntoComponents()}
-
         </div>
       </section>
     </main >

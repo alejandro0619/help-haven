@@ -11,7 +11,7 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
   return (
     <section className="flex justify-center">
       <nav
-        className={`fixed top-5 rounded-lg transition-all duration-1000 h-[40px] z-50 flex justify-between items-center w-[95%] p-2
+        className={`fixed top-5 rounded-lg transition-all duration-1000 z-50 flex justify-between items-center w-[95%] p-2 h-fit
       ${hasScrolled ? "bg-medium lg:w-[40%] p-2 lg:mx-auto sm:w-[95%]" : "w-[95%] p-2"}
       `}
       >
@@ -56,7 +56,7 @@ const HomeNav: React.FC<Props> = ({ hasScrolled }) => {
             <Button
               className={`
             ${hasScrolled ? "bg-light text-dark hover:bg-light/50" : "bg-dark text-light hover:bg-dark/50"}
-            px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm
+            px-2 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm 
           `}
             >
               Join Waitlist

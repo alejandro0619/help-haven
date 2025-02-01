@@ -8,7 +8,16 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	extend: {
+		extend: {
+			transform: {
+				'rotate-x-[6deg]': 'rotateX(6deg)',
+				'rotate-y-[25deg]': 'rotateY(25deg)',
+				'rotate-x-[0deg]': 'rotateX(0deg)',
+				'rotate-y-[-15deg]': 'rotateY(-15deg)',
+			},
+			perspective: {
+				'800': '800px'
+			},
 			colors: {
 				scrollbarThumb: '#888',
         scrollbarTrack: '#f1f1f1',

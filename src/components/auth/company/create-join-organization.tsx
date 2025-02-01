@@ -39,7 +39,7 @@ const CreateOrganization: React.FC<props> = ({ nextStep }) => {
       </span>
       <div className="flex flex-col gap-6">
 
-        <form onSubmit={handleSubmit(onSubmit, () => console.log("hay error", errors))} className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:w-full">
+        <form onSubmit={handleSubmit(onSubmit, () => console.log("hay error", errors))} className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-full">
           {/* Name */}
           <div className="flex flex-col gap-2">
             <Label htmlFor="name" className="text-dark font-semibold">Organization name:</Label>
