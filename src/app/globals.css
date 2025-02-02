@@ -74,13 +74,13 @@ body {
 
 .carnet-3d {
   transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
-  filter: blur(2px);
+
   opacity: 1;
   transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
 }
 
 .carnet-3d:hover {
   transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg) scale(1);
-  filter: blur(0);
+
   opacity: 1;
 }

@@ -20,8 +20,13 @@ const PersonalInformation: React.FC<props> = ({ nextStep }) => {
     resolver: zodResolver(personalInformation),
   });
   const onSubmit = (data: PersonalInformationSchema) => {
-    saveUserProfile({ ...data, id: userId as string });
-    nextStep();
+    try {
+      saveUserProfile({ ...data, id: userId as string });
+      nextStep();
+    }
+    catch(e) {
+      console.error("Error saving user profile");
+    }
   }
   return (
     <div className="flex flex-col gap-4 rounded-lg p-6 lg:h-[600px] lg:w-fit w-full">

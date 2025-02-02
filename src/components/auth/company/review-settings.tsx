@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from "next/navigation";
 import { getUserAndOrganization } from "@/actions/auth/review-settings";
 import { useEffect, useState } from "react";
 import useAuth from "@/hooks/use-auth";
@@ -38,6 +39,7 @@ const ReviewSettings: React.FC<Props> = () => {
   const { userId } = useAuth();
   const [user, setUser] = useState<User | null>(null);
   const [organization, setOrganization] = useState<Organization | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (userId) {
@@ -55,6 +57,10 @@ const ReviewSettings: React.FC<Props> = () => {
       console.log("userId is not defined yet.");
     }
   }, [userId]);
+
+  const handleContinue = () => {
+    router.push("/company/dashboard");
+  }
 
   return (
     <div className="flex items-center justify-around gap-6 rounded-lg p-6 lg:h-[600px] lg:w-[80%] w-full">
@@ -106,7 +112,7 @@ const ReviewSettings: React.FC<Props> = () => {
 
       </div>
 
-      <button className="absolute bottom-5 right-5 py-2 w-fit h-fit hover:bg-dark hover:text-white text-dark bg-white rounded-lg px-4 transition duration-500">
+      <button onClick={ handleContinue} className="absolute bottom-5 right-5 py-2 w-fit h-fit hover:bg-dark hover:text-white text-dark bg-white rounded-lg px-4 transition duration-500">
         <span className="text-sm font-semibold">Continue</span>
       </button>
 
