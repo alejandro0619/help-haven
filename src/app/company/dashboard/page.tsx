@@ -1,23 +1,36 @@
+"use client";
+import AdminNav from '@/components/navbars/admin-nav';
+import CompanySelector from '@/components/other/company-selector';
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import React from 'react';
 
-const Dashboard: React.FC = () => {
+type Company = {
+  id: string;
+  name: string;
+  plan: string;
+};
+
+const Dashboard = () => {
+  const companies: Company[] = [
+    { id: "1", name: "Acme Corp", plan: "Basic" },
+    { id: "2", name: "Globex Inc", plan: "Enterprise" },
+    { id: "3", name: "Umbrella Co", plan: "Free" },
+  ];
+
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Dashboard</h1>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <div style={{ border: '1px solid #ccc', padding: '10px', width: '30%' }}>
-          <h2>Section 1</h2>
-          <p>Content for section 1</p>
-        </div>
-        <div style={{ border: '1px solid #ccc', padding: '10px', width: '30%' }}>
-          <h2>Section 2</h2>
-          <p>Content for section 2</p>
-        </div>
-        <div style={{ border: '1px solid #ccc', padding: '10px', width: '30%' }}>
-          <h2>Section 3</h2>
-          <p>Content for section 3</p>
-        </div>
-      </div>
+    <div className="h-screen w-screen bg-dashboardBg flex relative ">
+      <SidebarProvider>
+        <AdminNav />
+        <SidebarInset>
+          <header>
+            <SidebarTrigger className='absolute top-5 left-5 p-5'>
+
+            </SidebarTrigger>
+          </header>
+        </SidebarInset>
+      </SidebarProvider>
+      <CompanySelector companies={companies} styles='absolute right-5 top-5' />
+
     </div>
   );
 };

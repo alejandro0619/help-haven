@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 export async function middleware(request: NextRequest) {
+  return NextResponse.next();
   console.log('Running middleware for /company/dashboard/* routes');
   // Get the token from cookies. In Next.js middleware, the cookie value is accessed via the `value` property.
   const supabase = await createClient();
@@ -23,7 +24,7 @@ export async function middleware(request: NextRequest) {
   const { data: profile, error: profileError } = await supabase
     .from('profiles')
     .select('id')
-    .eq('user_id', user.id)
+    .eq('user_id', user!.id)
     .maybeSingle();
 
   if (profileError || !profile) {

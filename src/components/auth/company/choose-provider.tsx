@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { addProviderEmail } from "@/actions/auth/add-provider-email";
 import useUserProfile from "@/hooks/use-auth";
+import { useToast } from "@/hooks/use-toast";
 
 type props = {
   nextStep: () => void;
@@ -18,13 +19,30 @@ const ChooseProvider: React.FC<props> = ({ nextStep }) => {
   const { register, handleSubmit, formState: { errors } } = useForm<EmailProviderSchema>({
     resolver: zodResolver(emailProvider)
   });
+  const { toast } = useToast();
 
   const onSubmit = async (data: EmailProviderSchema) => {
-    const { user } = await addProviderEmail(data.email, data.password)
-    if (user) {
-      saveUserId(user.id); // Save the user uuid in local storage
-      nextStep();
+    try {
+      const { user } = await addProviderEmail(data.email, data.password)
+      if (user) {
+        saveUserId(user.id);
+        toast({
+          title: "Email added successfully",
+          description: "Your email has been added successfully",
+          variant: "default",
+        });
+        nextStep();
+      }
+    } catch (e) {
+      console.error("Error adding provider email");
+      toast({
+        title: "Error adding email",
+        description: "There was an error adding your email",
+        variant: "destructive",
+      });
     }
+
+
   }
 
   return (

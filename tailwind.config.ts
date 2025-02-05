@@ -8,19 +8,11 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-		extend: {
-			transform: {
-				'rotate-x-[6deg]': 'rotateX(6deg)',
-				'rotate-y-[25deg]': 'rotateY(25deg)',
-				'rotate-x-[0deg]': 'rotateX(0deg)',
-				'rotate-y-[-15deg]': 'rotateY(-15deg)',
-			},
-			perspective: {
-				'800': '800px'
-			},
-			colors: {
-				scrollbarThumb: '#888',
-        scrollbarTrack: '#f1f1f1',
+  	extend: {
+  		colors: {
+  			dashboardBg: '#F4F6F8',
+  			scrollbarThumb: '#888',
+  			scrollbarTrack: '#f1f1f1',
   			light: '#e2eefa',
   			medium: '#427AA1',
   			dark: '#064789',
@@ -63,6 +55,16 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		fontFamily: {},

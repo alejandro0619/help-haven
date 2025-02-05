@@ -12,6 +12,7 @@ import { saveOrganization } from '@/actions/auth/save-organization';
 import { assignOrgToProfile } from '@/actions/auth/asign-org-to-profile';
 import useAuth from '@/hooks/use-auth';
 import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
 
 type props = {
   nextStep: () => void;
@@ -23,12 +24,29 @@ const CreateOrganization: React.FC<props> = ({ nextStep }) => {
   const { register, handleSubmit, formState: { errors } } = useForm<OrganizationSchema>({
     resolver: zodResolver(organization)
   });
-
+  const { toast } = useToast();
+  
   const onSubmit = async (data: OrganizationSchema) => {
 
-    const { id } = await saveOrganization({ ...data, status: "inactive", timezone, subscription_plan: plan });
-    nextStep();
-    await assignOrgToProfile(userId!, id);
+    try {
+      const { id } = await saveOrganization({ ...data, status: "inactive", timezone, subscription_plan: plan });
+      
+      await assignOrgToProfile(userId!, id);
+      toast({
+        title: "Organization saved successfully",
+        description: "Your organization has been saved successfully",
+        variant: "default",
+      });
+      nextStep();
+    } catch (error) {
+      console.error("Error saving organization");
+      toast({
+        title: "Error saving organization",
+        description: "There was an error saving your organization",
+        variant: "destructive",
+      });
+
+    }
   };
 
   return (

@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { personalInformation, PersonalInformationSchema } from "@/schemas/auth/personal-information-schema";
 import { saveUserProfile } from "@/actions/auth/save-user-profile";
 import useUserProfile from "@/hooks/use-auth";
+import { useToast } from "@/hooks/use-toast";
 
 type props = {
   nextStep: () => void;
@@ -19,13 +20,26 @@ const PersonalInformation: React.FC<props> = ({ nextStep }) => {
   const { register, handleSubmit, formState: { errors } } = useForm<PersonalInformationSchema>({
     resolver: zodResolver(personalInformation),
   });
+
+  const { toast } = useToast();
+
   const onSubmit = (data: PersonalInformationSchema) => {
     try {
       saveUserProfile({ ...data, id: userId as string });
+      toast({
+        title: "Profile saved successfully",
+        description: "Your profile has been saved successfully",
+        variant: "default",
+      });
       nextStep();
     }
     catch(e) {
       console.error("Error saving user profile");
+      toast({
+        title: "Error saving profile",
+        description: "There was an error saving your profile",
+        variant: "destructive",
+      });
     }
   }
   return (
